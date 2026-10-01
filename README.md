@@ -6,6 +6,13 @@
 
 *Turn raw datasets into live, explorable insight at 100M ops/sec.*
 
+<br />
+
+**Architected & Built by [Raga Crypt](https://github.com/Raga-vibe)**
+
+<br />
+
+[![Author](https://img.shields.io/badge/Built%20by-Raga%20Crypt-00F59B?style=for-the-badge&logo=github&logoColor=black)](https://github.com/Raga-vibe)
 [![Next.js](https://img.shields.io/badge/Next.js-16.3-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Three.js](https://img.shields.io/badge/Three.js-WebGL-black?style=for-the-badge&logo=three.js)](https://threejs.org/)
@@ -163,6 +170,13 @@ vercel --prod
 
 ---
 
+## ✦ Author & Engineering
+
+Architected and built by **Raga Crypt**.
+- GitHub: [@Raga-vibe](https://github.com/Raga-vibe)
+
+---
+
 ## ✦ License
 
-Engineered for keynote presentation and open demonstration. MIT License. © 2026 AURA Technologies Inc.
+Engineered for keynote presentation and open demonstration. MIT License. © 2026 AURA Technologies Inc. / Raga Crypt.

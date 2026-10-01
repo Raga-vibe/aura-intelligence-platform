@@ -27,6 +27,8 @@ export const metadata: Metadata = {
     "Zero-Copy",
     "Keynote",
   ],
+  authors: [{ name: "Raga Crypt", url: "https://github.com/Raga-vibe" }],
+  creator: "Raga Crypt",
 };
 
 export default function RootLayout({

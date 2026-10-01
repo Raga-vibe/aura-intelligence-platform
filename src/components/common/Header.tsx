@@ -47,6 +47,9 @@ export function Header() {
           <span className="hidden sm:inline-block font-mono text-[10px] uppercase tracking-widest px-1.5 py-0.5 rounded bg-white/[0.06] text-white/50 border border-white/[0.08]">
             v3.2
           </span>
+          <span className="hidden md:inline-block font-mono text-[10px] text-white/40 border-l border-white/10 pl-2">
+            by Raga Crypt
+          </span>
         </button>
 
         {/* Center Nav */}

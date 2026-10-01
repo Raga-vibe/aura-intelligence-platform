@@ -2,6 +2,7 @@
   "name": "aura-intelligence-platform",
   "version": "3.2.0",
   "description": "AURA — Autonomous Neural Data Intelligence Platform. Flagship marketing experience & interactive operational console.",
+  "author": "Raga Crypt (https://github.com/Raga-vibe)",
   "private": true,
   "scripts": {
     "dev": "next dev",

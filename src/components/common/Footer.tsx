@@ -173,9 +173,21 @@ export function Footer() {
         </div>
 
         {/* Bottom Hairline & Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-white/30 gap-4">
-          <div>
-            © 2026 AURA TECHNOLOGIES INC. ALL RIGHTS RESERVED. DESIGNED FOR EXPONENTIALLY LARGE WORLDS.
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-white/40 gap-4">
+          <div className="flex flex-wrap items-center gap-2">
+            <span>© 2026 AURA TECHNOLOGIES INC.</span>
+            <span>•</span>
+            <span className="text-white/60">
+              ARCHITECTED & BUILT BY{" "}
+              <a
+                href="https://github.com/Raga-vibe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#00F59B] hover:text-[#00F0FF] transition-colors font-semibold"
+              >
+                RAGA CRYPT
+              </a>
+            </span>
           </div>
           <div className="flex items-center gap-3">
             <span>KEYNOTE EDITION</span>
