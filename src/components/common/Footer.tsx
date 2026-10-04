@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { sound } from "@/lib/audio";
-import { Cpu, Globe, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export function Footer() {
   const handleLinkHover = () => {
@@ -42,12 +43,16 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 py-12 border-b border-white/[0.06]">
           {/* Brand Col */}
           <div className="col-span-2 space-y-4">
-            <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#00F59B]" />
-              <span className="font-sans font-semibold tracking-tight text-white text-base">
+            <Link
+              href="/"
+              onClick={handleLinkClick}
+              className="flex items-center gap-2 group cursor-pointer inline-flex"
+            >
+              <span className="w-2.5 h-2.5 rounded-full bg-[#00F59B] shadow-[0_0_8px_#00F59B]" />
+              <span className="font-sans font-semibold tracking-tight text-white text-base group-hover:text-white/90">
                 AURA
               </span>
-            </div>
+            </Link>
             <p className="text-white/40 max-w-xs leading-relaxed text-xs">
               Autonomous neural data intelligence. Turning petabyte-scale raw streams into live,
               explorable truth with zero-copy hardware acceleration.
@@ -57,15 +62,25 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Col 1 */}
+          {/* Col 1: Platform */}
           <div className="space-y-3">
             <div className="font-mono text-[11px] uppercase tracking-wider text-white/70">
               Platform
             </div>
             <ul className="space-y-2 text-white/50">
               <li>
+                <Link
+                  href="/about"
+                  onMouseEnter={handleLinkHover}
+                  onClick={handleLinkClick}
+                  className="hover:text-white transition-colors"
+                >
+                  About AURA
+                </Link>
+              </li>
+              <li>
                 <a
-                  href="#scroll-story"
+                  href="/#scroll-story"
                   onMouseEnter={handleLinkHover}
                   onClick={handleLinkClick}
                   className="hover:text-white transition-colors"
@@ -75,7 +90,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#interactive-demo"
+                  href="/#interactive-demo"
                   onMouseEnter={handleLinkHover}
                   onClick={handleLinkClick}
                   className="hover:text-white transition-colors flex items-center gap-1"
@@ -88,7 +103,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#bento-features"
+                  href="/#bento-features"
                   onMouseEnter={handleLinkHover}
                   onClick={handleLinkClick}
                   className="hover:text-white transition-colors"
@@ -98,7 +113,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#performance"
+                  href="/#performance"
                   onMouseEnter={handleLinkHover}
                   onClick={handleLinkClick}
                   className="hover:text-white transition-colors"
@@ -109,64 +124,101 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Col 2 */}
+          {/* Col 2: Engineering */}
           <div className="space-y-3">
             <div className="font-mono text-[11px] uppercase tracking-wider text-white/70">
-              Developers
+              Engineering
             </div>
             <ul className="space-y-2 text-white/50">
               <li>
                 <a
-                  href="#"
+                  href="https://github.com/Raga-vibe/aura-intelligence-platform"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onMouseEnter={handleLinkHover}
                   className="hover:text-white transition-colors flex items-center gap-1"
                 >
-                  Rust / CUDA SDK <ArrowUpRight className="w-3 h-3 text-white/30" />
+                  GitHub Repository <ArrowUpRight className="w-3 h-3 text-white/30" />
                 </a>
               </li>
               <li>
-                <a href="#" onMouseEnter={handleLinkHover} className="hover:text-white transition-colors">
-                  Apache Arrow IPC
-                </a>
+                <Link
+                  href="/about"
+                  onMouseEnter={handleLinkHover}
+                  onClick={handleLinkClick}
+                  className="hover:text-white transition-colors"
+                >
+                  Zero-Copy Bus
+                </Link>
               </li>
               <li>
-                <a href="#" onMouseEnter={handleLinkHover} className="hover:text-white transition-colors">
-                  Python / PyTorch API
-                </a>
+                <Link
+                  href="/about"
+                  onMouseEnter={handleLinkHover}
+                  onClick={handleLinkClick}
+                  className="hover:text-white transition-colors"
+                >
+                  Riemannian Topology
+                </Link>
               </li>
               <li>
-                <a href="#" onMouseEnter={handleLinkHover} className="hover:text-white transition-colors">
-                  CLI Reference
-                </a>
+                <Link
+                  href="/about"
+                  onMouseEnter={handleLinkHover}
+                  onClick={handleLinkClick}
+                  className="hover:text-white transition-colors"
+                >
+                  Formal Proof Engine
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 3 */}
+          {/* Col 3: Security & Legal */}
           <div className="space-y-3">
             <div className="font-mono text-[11px] uppercase tracking-wider text-white/70">
               Security & Legal
             </div>
             <ul className="space-y-2 text-white/50">
               <li>
-                <a href="#" onMouseEnter={handleLinkHover} className="hover:text-white transition-colors">
-                  SOC 2 Type II
-                </a>
-              </li>
-              <li>
-                <a href="#" onMouseEnter={handleLinkHover} className="hover:text-white transition-colors">
-                  NVIDIA CC Enclave
-                </a>
-              </li>
-              <li>
-                <a href="#" onMouseEnter={handleLinkHover} className="hover:text-white transition-colors">
+                <Link
+                  href="/privacy"
+                  onMouseEnter={handleLinkHover}
+                  onClick={handleLinkClick}
+                  className="hover:text-white transition-colors"
+                >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" onMouseEnter={handleLinkHover} className="hover:text-white transition-colors">
+                <Link
+                  href="/terms"
+                  onMouseEnter={handleLinkHover}
+                  onClick={handleLinkClick}
+                  className="hover:text-white transition-colors"
+                >
                   Terms of Service
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy"
+                  onMouseEnter={handleLinkHover}
+                  onClick={handleLinkClick}
+                  className="hover:text-white transition-colors"
+                >
+                  Data Sovereignty
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms"
+                  onMouseEnter={handleLinkHover}
+                  onClick={handleLinkClick}
+                  className="hover:text-white transition-colors"
+                >
+                  Enterprise SLA
+                </Link>
               </li>
             </ul>
           </div>

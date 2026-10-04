@@ -102,6 +102,11 @@ Designed at the intersection of **Apple’s material restraint** and **NVIDIA’
 - Single-command quickstart: `npx @aura/engine init --production` with one-click clipboard copy.
 - Live global telemetry bar tracking 32 operational edge cluster locations (SFO-1, LHR-2, HND-1, FRA-4).
 
+### 7. Complete Enterprise Pages
+- **`/about`**: Platform origin, foundational direct-to-VRAM principles, and engineering leadership by Raga Crypt.
+- **`/privacy`**: Cryptographic data sovereignty commitments, zero-data retention architecture, and confidential computing enclave specs.
+- **`/terms`**: Enterprise master service terms, 99.999% SLA uptime commitments, and acceptable use policies.
+
 ---
 
 ## ✦ Tech Stack

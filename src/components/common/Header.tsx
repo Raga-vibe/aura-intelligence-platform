@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { sound } from "@/lib/audio";
 import { MagneticButton } from "./MagneticButton";
 import { Volume2, VolumeX, Terminal, Cpu } from "lucide-react";
@@ -10,7 +11,6 @@ export function Header() {
   const [edgeLatency, setEdgeLatency] = useState(0.38);
 
   useEffect(() => {
-    // Subtle jitter on latency to reflect live telemetry
     const interval = setInterval(() => {
       setEdgeLatency(+(0.35 + Math.random() * 0.08).toFixed(2));
     }, 2800);
@@ -24,6 +24,10 @@ export function Header() {
 
   const scrollTo = (id: string) => {
     sound.playClick();
+    if (typeof window !== "undefined" && window.location.pathname !== "/") {
+      window.location.href = `/#${id}`;
+      return;
+    }
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
@@ -34,8 +38,9 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-40 flex justify-center px-4 py-4 md:py-6 pointer-events-none">
       <div className="pointer-events-auto flex items-center justify-between w-full max-w-6xl px-4 md:px-6 py-2.5 rounded-full glass-pill border border-white/[0.09] shadow-[0_16px_40px_rgba(0,0,0,0.6)]">
         {/* Brand */}
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        <Link
+          href="/"
+          onClick={() => sound.playClick()}
           className="flex items-center gap-2.5 text-left group cursor-pointer"
         >
           <div className="relative flex items-center justify-center w-7 h-7 rounded-lg bg-white/[0.04] border border-white/10 group-hover:border-[#00F59B]/50 transition-colors">
@@ -50,10 +55,17 @@ export function Header() {
           <span className="hidden md:inline-block font-mono text-[10px] text-white/40 border-l border-white/10 pl-2">
             by Raga Crypt
           </span>
-        </button>
+        </Link>
 
         {/* Center Nav */}
         <nav className="hidden md:flex items-center gap-1 font-sans text-xs tracking-tight text-white/60">
+          <Link
+            href="/about"
+            onClick={() => sound.playClick()}
+            className="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/[0.05] transition-all cursor-pointer"
+          >
+            About
+          </Link>
           <button
             onClick={() => scrollTo("scroll-story")}
             className="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/[0.05] transition-all cursor-pointer"
@@ -83,13 +95,11 @@ export function Header() {
 
         {/* Right Telemetry & Actions */}
         <div className="flex items-center gap-2 sm:gap-3">
-          {/* Edge Telemetry */}
           <div className="hidden lg:flex items-center gap-2 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/[0.06] text-[11px] font-mono text-white/50">
             <Cpu className="w-3 h-3 text-[#00F59B]" />
             <span>{edgeLatency}ms EDGE</span>
           </div>
 
-          {/* Sound Toggle */}
           <button
             onClick={handleSoundToggle}
             aria-label={isMuted ? "Enable sound effects" : "Mute sound effects"}
@@ -99,7 +109,6 @@ export function Header() {
             {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-[#00F59B]" />}
           </button>
 
-          {/* Magnetic CTA */}
           <MagneticButton
             variant="primary"
             size="sm"
